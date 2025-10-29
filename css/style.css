@@ -1,0 +1,198 @@
+/* ==============================
+   SISTEMA DE DESIGN
+============================== */
+:root {
+  /* Paleta de cores (8 cores) */
+  --cor-primaria: #e07a5f;
+  --cor-secundaria: #3d405b;
+  --cor-destaque: #81b29a;
+  --cor-fundo: #f4f1de;
+  --cor-clara: #fff;
+  --cor-escura: #222;
+  --cor-texto: #333;
+  --cor-hover: #f2cc8f;
+
+  /* Tipografia (5 níveis) */
+  --fonte-grande: 2.5rem;
+  --fonte-titulo: 2rem;
+  --fonte-subtitulo: 1.5rem;
+  --fonte-normal: 1rem;
+  --fonte-pequena: 0.875rem;
+
+  /* Sistema de espaçamento modular */
+  --esp-1: 8px;
+  --esp-2: 16px;
+  --esp-3: 24px;
+  --esp-4: 32px;
+  --esp-5: 48px;
+  --esp-6: 64px;
+}
+
+/* ==============================
+   ESTILOS GERAIS
+============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+  background-color: var(--cor-primaria);
+  color: var(--cor-clara);
+  padding: var(--esp-2);
+  text-align: center;
+}
+
+header h1 {
+  font-size: var(--fonte-titulo);
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: var(--esp-2);
+  list-style: none;
+  margin-top: var(--esp-1);
+}
+
+nav a {
+  color: var(--cor-clara);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+nav a:hover {
+  color: var(--cor-hover);
+}
+
+/* ==============================
+   LAYOUT COM GRID E FLEXBOX
+============================== */
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--esp-4);
+  padding: var(--esp-4);
+}
+
+section {
+  background: var(--cor-clara);
+  padding: var(--esp-3);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+section img {
+  width: 100%;
+  border-radius: 8px;
+  margin-top: var(--esp-2);
+}
+
+/* ==============================
+   FORMULÁRIOS E BOTÕES
+============================== */
+form {
+  background-color: var(--cor-clara);
+  padding: var(--esp-3);
+  border-radius: 8px;
+  max-width: 600px;
+  margin: auto;
+}
+
+fieldset {
+  border: 2px solid var(--cor-secundaria);
+  border-radius: 8px;
+  padding: var(--esp-3);
+}
+
+label {
+  display: block;
+  margin-bottom: var(--esp-1);
+  font-weight: 600;
+}
+
+input, button {
+  width: 100%;
+  padding: var(--esp-2);
+  margin-bottom: var(--esp-2);
+  border: 1px solid var(--cor-secundaria);
+  border-radius: 5px;
+}
+
+button {
+  background-color: var(--cor-primaria);
+  color: var(--cor-clara);
+  font-size: var(--fonte-subtitulo);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: var(--cor-destaque);
+}
+
+/* ==============================
+   COMPONENTES DE INTERFACE
+============================== */
+.card {
+  background: var(--cor-clara);
+  border-radius: 8px;
+  padding: var(--esp-3);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.badge {
+  background-color: var(--cor-secundaria);
+  color: var(--cor-clara);
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: var(--fonte-pequena);
+}
+
+/* ==============================
+   RODAPÉ
+============================== */
+footer {
+  background-color: var(--cor-secundaria);
+  color: var(--cor-clara);
+  text-align: center;
+  padding: var(--esp-2);
+  margin-top: var(--esp-4);
+}
+
+/* ==============================
+   RESPONSIVIDADE
+============================== */
+@media (min-width: 600px) {
+  main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  main {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  nav ul {
+    flex-direction: column;
+  }
+}
+
+
